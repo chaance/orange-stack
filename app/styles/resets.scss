@@ -1,0 +1,207 @@
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+	border: 0 solid currentColor;
+	overflow-wrap: break-word;
+	hyphens: auto;
+	@media (min-width: 640px) {
+		hyphens: initial;
+	}
+}
+
+:root {
+	--_re-line-height: 1.5;
+	--_re-font-size: 16px;
+	--_re-font-mono: ui-monospace, IBM Plex Mono, Menlo, Monaco, Consolas,
+		Liberation Mono, Courier New, monospace;
+	--_re-font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+		Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+		Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+	--_re-tab-size: 4;
+}
+
+:where(html) {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+:where(body) {
+	font-size: var(--_re-font-size);
+	font-family: var(--_re-font-sans);
+	line-height: var(--_re-line-height);
+	font-feature-settings: normal;
+	-webkit-text-size-adjust: 100%;
+	tab-size: var(--_re-tab-size);
+}
+
+:where(html, body) {
+    scrollbar-gutter: stable both-edges;
+	height: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+:where(hr) {
+	height: 0;
+	color: inherit;
+	border-top-width: 1px;
+}
+
+:where(abbr[title]) {
+	text-decoration: inherit;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+	font: inherit;
+}
+
+:where(menu, ol, ul) {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+:where(a) {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+:where(b, strong) {
+	font-weight: bolder;
+}
+
+:where(small) {
+	font-size: 80%;
+}
+
+:where(sub, sup) {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+:where(sub) {
+	bottom: -0.25em;
+}
+
+:where(sup) {
+	top: -0.5em;
+}
+
+:where(code, kbd, pre, samp) {
+	font-family: var(--_re-font-mono);
+	font-size: 1em;
+}
+
+:where(button, input, select, textarea) {
+	font: inherit;
+	line-height: inherit;
+	color: inherit;
+}
+
+:where(select) {
+	text-transform: inherit;
+}
+
+:where(button, [type="button"], [type="submit"], [type="reset"]) {
+	display: inline-block;
+	appearance: none;
+	text-shadow: none;
+	text-transform: inherit;
+	border: 0;
+	box-shadow: none;
+	background: none;
+	text-align: inherit;
+	color: inherit;
+}
+
+:-moz-focusring {
+	outline: auto;
+}
+
+:-moz-ui-invalid {
+	box-shadow: none;
+}
+
+:where(progress) {
+	vertical-align: baseline;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+	height: auto;
+}
+
+:where([type="text"],
+[type="password"],
+[type="email"],
+[type="url"],
+[type="tel"],
+[type="number"],
+[type="search"],
+[type="date"],
+[type="month"],
+[type="week"],
+[type="time"],
+[type="datetime-local"]) {
+	appearance: none;
+	outline-offset: -2px;
+}
+
+::-webkit-search-decoration {
+	appearance: none;
+}
+
+::-webkit-file-upload-button {
+	-webkit-appearance: none;
+	font: inherit;
+}
+
+:where(textarea) {
+	resize: vertical;
+}
+
+:where(input::placeholder,
+textarea::placeholder) {
+	opacity: 1;
+	color: #a7a7a7;
+}
+
+:where(table) {
+	text-indent: 0;
+	border-color: inherit;
+	border-collapse: collapse;
+}
+
+:where(summary) {
+	display: list-item;
+}
+
+:where(audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video) {
+	display: block;
+	vertical-align: middle;
+}
+
+:where(canvas,
+img,
+picture,
+svg,
+video) {
+	max-width: 100%;
+	height: auto;
+}
+
+[hidden] {
+	display: none;
+}
