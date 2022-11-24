@@ -24,8 +24,8 @@
 }
 
 :where(html) {
-    box-sizing: border-box;
-    font-size: 16px;
+	box-sizing: border-box;
+	font-size: 16px;
 }
 
 :where(body) {
@@ -38,10 +38,11 @@
 }
 
 :where(html, body) {
-    scrollbar-gutter: stable both-edges;
+	scrollbar-gutter: stable both-edges;
 	height: 100%;
-    min-height: 100vh;
-    min-height: 100dvh;
+	min-height: 100vh;
+	min-height: 100dvh;
+
 }
 
 :where(hr) {
@@ -119,6 +120,10 @@
 	color: inherit;
 }
 
+:where(:focus:not(:focus-visible)) {
+	outline: 0;
+}
+
 :-moz-focusring {
 	outline: auto;
 }
@@ -136,18 +141,7 @@
 	height: auto;
 }
 
-:where([type="text"],
-[type="password"],
-[type="email"],
-[type="url"],
-[type="tel"],
-[type="number"],
-[type="search"],
-[type="date"],
-[type="month"],
-[type="week"],
-[type="time"],
-[type="datetime-local"]) {
+:where([type="text"], [type="password"], [type="email"], [type="url"], [type="tel"], [type="number"], [type="search"], [type="date"], [type="month"], [type="week"], [type="time"], [type="datetime-local"]) {
 	appearance: none;
 	outline-offset: -2px;
 }
@@ -165,8 +159,7 @@
 	resize: vertical;
 }
 
-:where(input::placeholder,
-textarea::placeholder) {
+:where(input::placeholder, textarea::placeholder) {
 	opacity: 1;
 	color: #a7a7a7;
 }
@@ -181,23 +174,12 @@ textarea::placeholder) {
 	display: list-item;
 }
 
-:where(audio,
-canvas,
-embed,
-iframe,
-img,
-object,
-svg,
-video) {
+:where(audio, canvas, embed, iframe, img, picture, object, svg, video) {
 	display: block;
 	vertical-align: middle;
 }
 
-:where(canvas,
-img,
-picture,
-svg,
-video) {
+:where(canvas, img, picture, svg, video) {
 	max-width: 100%;
 	height: auto;
 }
