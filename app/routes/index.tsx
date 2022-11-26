@@ -1,5 +1,5 @@
 import type { LinksFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
+import { Form, Link } from "@remix-run/react";
 
 import { useOptionalUser } from "~/utils";
 import routeStylesUrl from "~/dist/styles/routes/index.css";
@@ -43,9 +43,16 @@ export default function Index() {
 
 					<div className="actions">
 						{user ? (
-							<Link to="/notes" className="button">
-								View Notes for {user.email}
-							</Link>
+							<>
+								<Link to="/notes" className="button">
+									View Notes for {user.email}
+								</Link>
+								<Form method="post" action="/logout">
+									<button type="submit" className="button">
+										Logout
+									</button>
+								</Form>
+							</>
 						) : (
 							<>
 								<Link to="/join" className="button">

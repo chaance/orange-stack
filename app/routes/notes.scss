@@ -1,0 +1,113 @@
+.notes-layout {
+	$container_width: 48rem;
+	display: flex;
+	flex-direction: column;
+	flex: 1 0 100%;
+	max-height: 100vh;
+	max-height: 100dvh;
+
+	.inner {
+		--container-width: #{$container_width};
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 100%;
+		height: 100%;
+	}
+
+	.header {
+		display: flex;
+		flex-direction: column;
+		padding: 0.5rem 0;
+		border-bottom: 1px solid var(--color-body-border);
+		@media (min-width: #{$container_width}) {
+			flex-direction: row;
+			align-items: flex-end;
+			justify-content: space-between;
+			padding: 3rem 0 0.75rem;
+		}
+	}
+
+	.logout-form {
+		display: flex;
+		flex-direction: column;
+		color: var(--color-body-fg-weak);
+		@media (min-width: #{$container_width}) {
+			gap: 0.5rem;
+			flex-direction: row;
+		}
+	}
+
+	.logout-button {
+		cursor: pointer;
+		text-decoration: underline;
+		&:hover {
+			color: var(--color-body-fg);
+		}
+	}
+
+	.main {
+		display: grid;
+		position: relative;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+		flex: 1 1 100%;
+		height: 100%;
+		overflow: hidden;
+
+		* {
+			// Ensures that focus rings aren't cut off by overflow
+			outline-offset: -2px;
+		}
+	}
+
+	.footer {
+		position: relative;
+		position: sticky;
+		bottom: 0;
+	}
+
+	.new-note-button {
+		position: absolute;
+		bottom: 1rem;
+		right: 1rem;
+	}
+
+	.notes,
+	.outlet {
+		max-height: 100%;
+		overflow: auto;
+		padding: 1rem 0;
+	}
+
+	.notes-item-link {
+		display: flex;
+		align-items: center;
+		padding: 0.25em 0.5em;
+		border-radius: 3px;
+
+		&:active {
+			background-color: hsl(0 0% 0% / 0.05);
+			@media (prefers-color-scheme: dark) {
+				background-color: hsl(0 0% 100% / 0.075);
+			}
+		}
+
+		&.active {
+			background-color: hsl(0 0% 0% / 0.08);
+			&:active {
+				background-color: hsl(0 0% 0% / 0.12);
+			}
+			@media (prefers-color-scheme: dark) {
+				background-color: hsl(0 0% 100% / 0.125);
+				&:active {
+					background-color: hsl(0 0% 100% / 0.15);
+				}
+			}
+		}
+	}
+
+	.notes-item-icon {
+		display: inline-block;
+		margin-right: 0.5em;
+	}
+}
